@@ -218,3 +218,28 @@ def _demo() -> None:
 if __name__ == "__main__":
 	_demo()
 
+# --- Polymorphism Example: Vehicles ---
+class Vehicle:
+	def move(self) -> None:
+		raise NotImplementedError("Subclasses must implement move()")
+
+class Car(Vehicle):
+	def move(self) -> None:
+		print("Driving 🚗")
+
+class Plane(Vehicle):
+	def move(self) -> None:
+		print("Flying ✈️")
+
+class Boat(Vehicle):
+	def move(self) -> None:
+		print("Sailing 🚤")
+
+def vehicle_demo():
+	print("\n--- Vehicle Polymorphism Demo ---")
+	vehicles = [Car(), Plane(), Boat()]
+	for v in vehicles:
+		v.move()
+
+if __name__ == "__main__":
+	vehicle_demo()
